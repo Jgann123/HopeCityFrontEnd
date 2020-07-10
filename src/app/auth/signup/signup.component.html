@@ -1,0 +1,211 @@
+<div class="view">
+  <div class="jumbotron text-center hoverable p-4">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-4 offset-md-1 mx-3 my-3">
+        <!-- Featured image -->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <img src="../../../assets/images/HCSignUp2.png" class="img-fluid"
+            alt="Sample image for first version of blog listing">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-7 text-md-left ml-3 mt-3">
+
+        <!-- Horizontal Steppers -->
+        <div class="row">
+          <div class="col-md-12">
+
+            <h1>Hope City Sign Up</h1>
+            <h3>Create your account to get started</h3>
+            <!-- Steppers Wrapper. This is the 1, 2, 3 at the top of the sign up form -->
+            <ul class="stepper stepper-horizontal">
+
+              <!-- First Step -->
+              <li class="active">
+                <a href="#">
+                  <span class="circle">1</span>
+                  <span class="label">Sign Up</span>
+                </a>
+              </li>
+
+              <!-- Second Step -->
+              <li class="">
+                <a routerLink="/events">
+                  <span class="circle">2</span>
+                  <span class="label">Find Local Missions</span>
+                </a>
+              </li>
+
+              <!-- Third Step -->
+              <li class="">
+                <a routerLink="/events">
+                  <span class="circle">3</span>
+                  <span class="label">Change your City</span>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- This is the start of the sign up form -->
+        <form class="signUpForm" (submit)="onSignup(signupForm)" #signupForm="ngForm">
+
+          <!-- Grid row 1. first name and last name -->
+          <div class="row">
+            <div class="col">
+              <div class="md-form mt-0">
+                <input mdbInput mdbValidate type="text" name="firstName" class="form-control" pattern="[A-Za-z]+"
+                  placeholder="First Name" ngModel #firstNameInput="ngModel" required>
+                <mdb-error *ngIf="firstNameInput.invalid && (firstNameInput.dirty || firstNameInput.touched)">Not a name
+                </mdb-error>
+              </div>
+            </div>
+            <div class="col">
+              <div class="md-form mt-0">
+                <input mdbInput mdbValidate type="text" name="lastName" class="form-control" pattern="[A-Za-z_]+" placeholder="Last Name" ngModel
+                  #lastNameInput="ngModel" required>
+                  <mdb-error *ngIf="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched)">Not a name
+                  </mdb-error>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid row 3. City, State, Zip -->
+          <div class="row">
+            <div class="col">
+              <div class="md-form mt-0">
+                <input mdbInput mdbValidate type="text" name="city" class="form-control" pattern="^[a-zA-Z0-9 ]*$" placeholder="City" ngModel
+                  #cityInput="ngModel" required>
+                  <mdb-error *ngIf="cityInput.invalid && (cityInput.dirty || cityInput.touched)">Not a city
+                  </mdb-error>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="md-form mt-0">
+                <select mdbInput mdbValidate type="text" name="state" class="form-control" pattern="[A-Za-z]{2}" placeholder="State" ngModel
+                  #stateInput="ngModel" required>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AR">AR</option>
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                  </select>
+                  <mdb-error *ngIf="stateInput.invalid && (stateInput.dirty || stateInput.touched)">Please enter 2 letters for your state
+                  </mdb-error>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="md-form mt-0">
+                <input mdbInput mdbValidate type="text" name="zip" class="form-control" pattern="[0-9]{5}" placeholder="Zip" ngModel
+                  #zipInput="ngModel" required>
+                  <mdb-error *ngIf="zipInput.invalid && (zipInput.dirty || zipInput.touched)">Please enter a valid 5 digit zip code
+                  </mdb-error>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid row 3. Email and password -->
+          <div class="row">
+            <div class="col">
+              <div class="md-form mt-0">
+                <input mdbInput mdbValidate type="email" name="email" class="form-control" pattern="^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$" placeholder="Email" ngModel
+                  #emailInput="ngModel" required email>
+                  <mdb-error *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">Please enter a valid email address
+                  </mdb-error>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="md-form mt-0">
+                <input mdbInput mdbValidate type="password" name="password" class="form-control" pattern="(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z]))^.{8,}$" placeholder="Password" ngModel
+                  #passwordInput="ngModel" required>
+                  <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">Please use one uppercase letter, one number, and a min of 8 characters
+                  </mdb-error>
+              </div>
+            </div>
+            <div class="col">
+              <div class="md-form mt-0">
+                <input mdbInput mdbValidate type="password" name="passwordMatch" class="form-control" pattern="(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z]))^.{8,}$" placeholder="Confirm Password" ngModel
+                  #passwordInput="ngModel" required>
+                  <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">Please use one uppercase letter, one number, and a min of 8 characters
+                  </mdb-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="signUpButton">
+            <button
+            type="button"
+            rounded="true"
+            mdbBtn
+            color="default"
+            class="btn aqua-gradient"
+            type="submit">
+              SIGN UP
+            </button>
+          </div>
+        </form>
+
+        <h5>Already have an account?<a [routerLink]="['/login']" routerLinkActive="router-link-active"> Log in</a></h5>
+      </div>
+    </div>
+  </div>
+</div>

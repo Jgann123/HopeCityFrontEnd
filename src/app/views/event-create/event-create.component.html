@@ -1,0 +1,395 @@
+<div class="view">
+  <div class="jumbotron text-center hoverable p-4">
+    <div class="row">
+      <div class="col-md-12 text-md-left ml-3 mt-3">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Your Event!</h1>
+            <!-- This is the start of the sign up form -->
+            <form class="createEventForm" (submit)="onSaveEvent(createEventForm)" #createEventForm="ngForm">
+              <!-- Grid row 1. first name and last name -->
+              <div class="row">
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="^[a-zA-Z0-9 ]*$"
+                      type="text"
+                      name="eventName"
+                      class="form-control"
+                      placeholder="Name of your event"
+                      [(ngModel)]="inputEventName"
+                      [ngModel]="event?.eventName"
+                      #eventNameInput="ngModel"
+                      required
+                    />
+                    <mdb-error *ngIf="eventNameInput.invalid &&
+                    (eventNameInput.dirty ||
+                    eventNameInput.touched)">
+                    No special characters are allowed
+                    </mdb-error>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="^[a-zA-Z0-9 ]*$"
+                      type="text"
+                      name="hostName"
+                      class="form-control"
+                      placeholder="Name of your Church or organization"
+                      [(ngModel)]="inputChurchName"
+                      [ngModel]="event?.hostName"
+                      #hostNameInput="ngModel"
+                    />
+                    <mdb-error *ngIf="hostNameInput.invalid &&
+                    (hostNameInput.dirty ||
+                    hostNameInput.touched)">
+                    No special characters are allowed
+                    </mdb-error>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grid row 1. first name and last name -->
+              <div class="row">
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <textarea
+                      mdbInput
+                      mdbValidate
+                      pattern="^[\s\S]{50,500}$"
+                      type="text"
+                      name="eventInfo"
+                      class="form-control"
+                      placeholder="Describe the event your hosting"
+                      [(ngModel)]="inputInfo"
+                      [ngModel]="event?.eventInfo"
+                      #eventInfoInput="ngModel"
+                    ></textarea>
+                    <mdb-error *ngIf="eventInfoInput.invalid &&
+                    (eventInfoInput.dirty ||
+                    eventInfoInput.touched)">
+                    Please give your event a description between 50 and 500 characters.
+                    </mdb-error>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="^[a-zA-Z0-9 ]*$"
+                      type="text"
+                      name="eventAddress"
+                      class="form-control"
+                      placeholder="Address"
+                      [(ngModel)]="inputAddress"
+                      [ngModel]="event?.eventAddress"
+                      #eventAddressInput="ngModel"
+                    />
+                    <mdb-error *ngIf="eventCityInput.invalid &&
+                    (eventCityInput.dirty ||
+                    eventCityInput.touched)">
+                    Please enter a valid address
+                    </mdb-error>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grid row 3. City, State, Zip -->
+              <div class="row">
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="^[a-zA-Z0-9 ]*$"
+                      type="text"
+                      name="eventCity"
+                      class="form-control"
+                      placeholder="City"
+                      [(ngModel)]="inputCity"
+                      [ngModel]="event?.eventCity"
+                      #eventCityInput="ngModel"
+                    />
+                    <mdb-error *ngIf="eventCityInput.invalid &&
+                    (eventCityInput.dirty ||
+                    eventCityInput.touched)">
+                    Please enter a valid city
+                    </mdb-error>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="^[A-Za-z]{2}"
+                      type="text"
+                      name="eventState"
+                      class="form-control"
+                      placeholder="State"
+                      [(ngModel)]="inputState"
+                      [ngModel]="event?.eventState"
+                      #eventStateInput="ngModel"
+                    />
+                    <mdb-error *ngIf="eventStateInput.invalid &&
+                    (eventStateInput.dirty ||
+                    eventStateInput.touched)">
+                    Please enter 2 letters for your state
+                    </mdb-error>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="[0-9]{5}"
+                      type="text"
+                      name="eventZip"
+                      class="form-control"
+                      placeholder="Zip"
+                      [(ngModel)]="inputZip"
+                      [ngModel]="event?.eventZip"
+                      #eventZipInput="ngModel"
+                    />
+                    <mdb-error *ngIf="eventZipInput.invalid &&
+                    (eventZipInput.dirty ||
+                    eventZipInput.touched)">
+                    Please enter a valid 5 digit zip code
+                    </mdb-error>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grid row 3. Event Day, Start Time and End Time -->
+              <div class="row">
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])*"
+                      type="date"
+                      name="eventDay"
+                      class="form-control"
+                      placeholder="What day will this take place?"
+                      [(ngModel)]="inputEventDay"
+                      [ngModel]="event?.eventDay"
+                      #eventDayInput="ngModel"
+                      required
+                    />
+                    <mdb-error *ngIf="eventDayInput.invalid &&
+                    (eventDayInput.dirty ||
+                    eventDayInput.touched)">
+                    Please enter a valid date for your event
+                    </mdb-error>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="^([0-1][0-9]|[2][0-3]):([0-5][0-9])$"
+                      type="time"
+                      name="eventStartTime"
+                      class="form-control"
+                      placeholder="When will this event start?"
+                      [(ngModel)]="inputStartTime"
+                      [ngModel]="event?.eventStartTime"
+                      #eventStartTimeInput="ngModel"
+                      required
+                    />
+                    <mdb-error *ngIf="eventStartTimeInput.invalid &&
+                    (eventStartTimeInput.dirty ||
+                    eventStartTimeInput.touched)">
+                    Please enter a valid start time for your event
+                    </mdb-error>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="md-form mt-0">
+                    <input
+                      mdbInput
+                      mdbValidate
+                      pattern="^([0-1][0-9]|[2][0-3]):([0-5][0-9])$"
+                      type="time"
+                      name="eventEndTime"
+                      class="form-control"
+                      placeholder="When will this event end?"
+                      [(ngModel)]="inputEndTime"
+                      [ngModel]="event?.eventEndTime"
+                      #eventEndTimeInput="ngModel"
+                      required
+                    />
+                    <mdb-error *ngIf="eventEndTimeInput.invalid &&
+                    (eventEndTimeInput.dirty ||
+                    eventEndTimeInput.touched)">
+                    Please enter a valid end time for your event
+                    </mdb-error>
+                  </div>
+                </div>
+              </div>
+
+              <div class="signUpButton">
+                <button
+                mdbBtn
+                type="submit"
+                gradient="aqua"
+                color="info"
+                mdbWavesEffect>
+                  Save Event
+                </button>
+              </div>
+            </form>
+
+            <h3 class="pageTitle display-5">Here is a preview of your event</h3>
+            <div class="pageBody">
+              <div class="row">
+                <div class="col-12">
+                  <div class="jumbotron text-center hoverable p-4">
+                    <div class="row">
+                      <div class="col-md-4 offset-md-1 mx-3 my-3">
+                        <div
+                          class="view overlay rounded z-depth-1 waves-light"
+                          mdbWavesEffect
+                        >
+                          <img
+                            src="../../../assets/images/EventPlaceholder.png"
+                            class="img-fluid"
+                            alt="Sample project image"
+                          />
+                          <a>
+                            <div class="mask rgba-white-slight"></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-7 text-md-left ml-3 mt-3">
+                        <h4 class="h4 mb-4">{{ inputEventName }}</h4>
+                        <h5 class="h5 mb-4">
+                          Hosted By: {{ inputChurchName }}
+                        </h5>
+                        <h5 class="h5 mb-4">Event Day: {{ inputEventDay }}</h5>
+
+                        <!-- Modal Window -->
+                        <button
+                          class=""
+                          type="button"
+                          gradient="peach"
+                          mdbBtn
+                          color="primary"
+                          class="waves-light"
+                          data-toggle="modal"
+                          data-target="#basicExample"
+                          (click)="frame.show()"
+                          mdbWavesEffect
+                        >
+                          Preview Event Details
+                        </button>
+
+                        <div
+                          mdbModal
+                          #frame="mdbModal"
+                          class="modal fade top"
+                          id="frameModalTop"
+                          tabindex="-1"
+                          role="dialog"
+                          aria-labelledby="myModalLabel"
+                          aria-hidden="true"
+                          [config]="{
+                            backdrop: false,
+                            ignoreBackdropClick: false
+                          }"
+                        >
+                          <div
+                            class="modal-dialog modal-lg modal-top-center modal-notify modal-info"
+                            role="document"
+                          >
+                            <!-- Modal Content -->
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <p class="heading">
+                                  Join {{ inputChurchName }} |
+                                  {{ inputEventName }}
+                                </p>
+
+                                <button
+                                  type="button"
+                                  class="close"
+                                  data-dismiss="modal"
+                                  aria-label="Close"
+                                  (click)="frame.hide()"
+                                >
+                                  <span aria-hidden="true" class="white-text"
+                                    >&times;</span
+                                  >
+                                </button>
+                              </div>
+
+                              <!-- Modal Body -->
+                              <div class="modal-body">
+                                <div class="row">
+                                  <div class="col-5">
+                                    <img
+                                      src="../../../assets/images/EventPlaceholder.png"
+                                      class="img-fluid"
+                                      alt="Sample project image"
+                                    />
+                                  </div>
+
+                                  <div class="col-7">
+                                    <h3>
+                                      <strong>{{ inputEventName }}</strong>
+                                    </h3>
+                                    <hr />
+                                    <h5>{{ inputInfo }}</h5>
+                                    <br />
+                                    <h5>
+                                      <strong>Hosted By:</strong>
+                                      {{ inputChurchName }}
+                                    </h5>
+                                    <h5>
+                                      <strong>Location:</strong>
+                                      {{ inputAddress }}
+                                    </h5>
+                                    <h5>
+                                      {{ inputCity }} {{ inputState }}
+                                      {{ inputZip }}
+                                    </h5>
+                                    <h5>
+                                      <strong>Day:</strong> {{ inputEventDay }}
+                                    </h5>
+                                    <h5>
+                                      {{ inputStartTime }} - {{ inputEndTime }}
+                                    </h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

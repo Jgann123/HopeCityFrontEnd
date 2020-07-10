@@ -1,0 +1,165 @@
+{
+  "signup": [
+    {
+      "firstName": "Sean",
+      "lastName": "Rathbun",
+      "email": "seanfrathbun@gmail.com",
+      "city": "Fort mill",
+      "state": "SC",
+      "zip": "29715",
+      "password": "password",
+      "id": 1
+    },
+    {
+      "firstName": "Testing",
+      "lastName": "mockDatabase",
+      "email": "testing@gmail.com",
+      "city": "testingcity",
+      "state": "SC",
+      "zip": "29715",
+      "password": "testingMockDatabase",
+      "id": 2
+    },
+    {
+      "firstName": "Wesley",
+      "lastName": "Duris",
+      "city": "South Hamilton",
+      "state": "Massachusetts",
+      "zip": "01982",
+      "email": "wesley.duris@gmail.com",
+      "password": "pass",
+      "id": 3
+    },
+    {
+      "firstName": "Wesley",
+      "lastName": "Duris",
+      "city": "South Hamilton",
+      "state": "Massachusetts",
+      "zip": "01982",
+      "email": "wesley.duris@gmail.com",
+      "password": "pass",
+      "id": 4
+    },
+    {
+      "firstName": "Wesley",
+      "lastName": "Duris",
+      "city": "South Hamilton",
+      "state": "Massachusetts",
+      "zip": "01982",
+      "email": "wesley.duris@gmail.com",
+      "password": "pass",
+      "id": 5
+    }
+  ],
+  "login": [
+    {
+      "email": "seanfrathbun@gmail.com",
+      "password": "password",
+      "id": 1
+    },
+    {
+      "email": "wesley.duris@gmail.com",
+      "password": "pass",
+      "id": 2
+    },
+    {
+      "email": "wesley.duris@gmail.com",
+      "password": "pass",
+      "id": 3
+    },
+    {
+      "email": "seanfrathbun@gmail.com",
+      "password": "password",
+      "id": 4
+    },
+    {
+      "email": "seanfrathbun@gmail.com",
+      "password": "password",
+      "id": 5
+    },
+    {
+      "email": "seanfrathbun@gmail.com",
+      "password": "password",
+      "id": 6
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "eventHost": "All Nations Church",
+      "eventName": "City wide weekly prayer meeting",
+      "eventInfo": "Come join us to pray for our city at our weekly prayer meeting. This is a time to gather together and unite in prayer for our city.",
+      "eventAddress": "1567 Tryon Street",
+      "eventCity": "Charlotte",
+      "eventState": "NC",
+      "eventZip": "29715",
+      "eventStartTime": "8:00 AM",
+      "eventEndTime": "10:30 AM",
+      "eventDay": "May 24, 2020"
+    },
+    {
+      "id": 2,
+      "eventName": "Neighbor Evangelism Training",
+      "hostName": "MorningStar Fellowship Church",
+      "eventInfo": "Having a hard time knowing how to make an influence in your neighborhood? Come and learn how you can evangelize to your neighbors. We will teach you how to share the gospel in 5 easy steps!",
+      "eventAddress": "1547 Legion rd",
+      "eventCity": "Fort mill",
+      "eventState": "SC",
+      "eventZip": "29715",
+      "eventStartTime": "13:47",
+      "eventEndTime": "16:45",
+      "eventDay": "2020-06-19"
+    },
+    {
+      "id": 3,
+      "eventHost": "MorningStar Fellowship Church",
+      "eventName": "Billy Graham Chaplin Training",
+      "eventInfo": "Come to our 4 hr Chaplin training day and get certified. We will teach you to bring hope to others and how to bring peace to tough situations.",
+      "eventAddress": "92845 Legion Rd",
+      "eventCity": "Charlotte",
+      "eventState": "NC",
+      "eventZip": "29715",
+      "eventStartTime": "8:00 AM",
+      "eventEndTime": "10:30 AM",
+      "eventDay": "June 3, 2020"
+    },
+    {
+      "id": 5,
+      "eventHost": "Elevation Church",
+      "eventName": "Healing on the streets ministry",
+      "eventInfo": "Join us to bring healing on the streets in Charlotte. Starting at Trade street, we will walk the streets and pray for people to get healed. Let's impact our city by sharing the love of Jesus through His healing power.",
+      "eventAddress": "187 Trade St",
+      "eventCity": "Charlotte",
+      "eventState": "NC",
+      "eventZip": "29715",
+      "eventStartTime": "8:00 AM",
+      "eventEndTime": "10:30 AM",
+      "eventDay": "June 3, 2020"
+    },
+    {
+      "id": 6,
+      "eventName": "Charlotte Family Fun Day",
+      "hostName": "MorningStar",
+      "eventInfo": "Don't miss this family fun day at Freedom Park. This is a day to build our community and relationships with family and friends. Bring some outdoor games and sunscreen. It's going to be a blast!",
+      "eventAddress": "90876 Freedom Park Rd",
+      "eventCity": "Charlotte",
+      "eventState": "NC",
+      "eventZip": "29715",
+      "eventStartTime": "23:27",
+      "eventEndTime": "13:27",
+      "eventDay": "2020-06-20"
+    }
+  ],
+  "userEvents": [
+    {
+      "id": 22,
+      "eventId": 3,
+      "userId": 22
+    },
+    {
+      "eventId": 3,
+      "userId": 22,
+      "id": 23
+    }
+  ]
+}

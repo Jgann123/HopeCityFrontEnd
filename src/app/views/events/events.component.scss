@@ -1,0 +1,78 @@
+.body {
+  margin: 5rem;
+}
+
+.text-body {
+  margin-top: 2%;
+  margin-left: 33%;
+  padding: 0;
+  width: 35%;
+  text-align: center;
+}
+
+.desc {
+  width: 60%;
+  margin-left: 18%;
+}
+
+mdb-card-footer, mdb-card-header, mdb-card-text {
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .card-deck {
+    margin: 5rem;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .card-deck {
+    margin: 7%;
+    margin-top: 1rem;
+  }
+}
+
+.view {
+  background: url('../../../assets/images/cityBG.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.pageBody {
+  margin-left: 6%;
+  margin-right: 6%;
+  margin-bottom: 6%;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.newEventButton {
+}
+
+.eventCards {
+  border-radius: 3px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+  background-color: lighten($color: #ffffffef, $amount: 0);
+}
+
+.adminBtn {
+ margin-top: 50px;
+ font-size: 30px;
+}
+
+.aboutHosting {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+  background-color: lighten($color: #ffffffca, $amount: 0);
+  margin-bottom: 60px;
+}
